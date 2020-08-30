@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: rwuniard/myreact
+          image: rwuniard/react-kube:v1
           ports:
             - containerPort: 3000

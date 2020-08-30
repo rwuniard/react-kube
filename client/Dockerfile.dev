@@ -1,6 +1,7 @@
 FROM node:alpine
 WORKDIR ./app
 COPY ./package.json .
+ENV CI=true # This is a workaround to make react running inside skaffold, otherwise it will keep restarting
 RUN npm install
 COPY . .
 CMD ["npm", "run", "start"]

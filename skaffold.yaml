@@ -4,7 +4,7 @@ build:
   local: # this means don't push to your git repo
     push: false # when the setting is set to false.
   artifacts:
-    - image: rwuniard/myreact
+    - image: rwuniard/react-kube
       context: client
       docker:
         dockerfile: Dockerfile.dev
@@ -16,3 +16,6 @@ deploy:
   kubectl:
     manifests:
       - k8s/client-deployment.yaml
+      - k8s/client-node-port.yaml
+#      - k8s/client-cluster-ip-service.yaml
+#      - k8s/ingress-service.yaml
